@@ -1,0 +1,510 @@
+haskell-logic-classes (1.5.3) unstable; urgency=low
+
+  * Make the Show instances output more general expressions
+  * Drop support for pretty < 1.1.2
+  * Update the Skolem class documentation
+  * start fixing Data.Logic.Instances.TPTP
+  * Move TFormula test instance from Tests/Common.hs to Data.Logic.Instances.Test
+  * Make the unit test code more understandable
+  * Replace the isSkolem method of class Skolem with fromSkolem
+
+ -- David Fox <dsf@seereason.com>  Wed, 02 Sep 2015 12:29:57 -0700
+
+haskell-logic-classes (1.5.1) unstable; urgency=low
+
+  * Update Homepage and Bug-Reports fields in cabal file
+
+ -- David Fox <dsf@seereason.com>  Mon, 13 Apr 2015 14:16:10 -0700
+
+haskell-logic-classes (1.5) unstable; urgency=low
+
+  * Move the pApp* functions from Data.Logic.Classes.FirstOrder to
+    Data.Logic.Classes.Apply, and let them work with any formula,
+    not just first order.
+
+ -- David Fox <dsf@seereason.com>  Sat, 29 Mar 2014 07:57:37 -0700
+
+haskell-logic-classes (1.4.8) unstable; urgency=low
+
+  * Make changelog visible in hackage.
+
+ -- David Fox <dsf@seereason.com>  Tue, 15 Oct 2013 07:48:21 -0700
+
+haskell-logic-classes (1.4.7) unstable; urgency=low
+
+  * Copy the two modules from the incremental-sat-solver package
+    (version 0.1.7) into logic-classes with a changed export list
+    so our SatSolver instance can access the data types.
+
+ -- David Fox <dsf@seereason.com>  Sun, 06 Jan 2013 17:44:04 -0800
+
+haskell-logic-classes (1.4.6) unstable; urgency=low
+
+  * Get rid of some deprecated datatype contexts.
+  * Fix bug in hackage build.
+
+ -- David Fox <dsf@seereason.com>  Wed, 20 Jun 2012 10:40:49 -0700
+
+haskell-logic-classes (1.4.5) unstable; urgency=low
+
+  * Build with stock applicative-extras package.
+
+ -- David Fox <dsf@seereason.com>  Wed, 18 Apr 2012 07:41:30 -0700
+
+haskell-logic-classes (1.4) unstable; urgency=low
+
+  * Overhaul of the pretty printing, add Pretty class.
+  * Fixes to get precedence behavior to match Harrison
+  * Rename class Formula -> Atom (still need to add f parameter)
+  * Sort out tangled type parameters (but still need to switch to type
+    families.)
+  * Add HasFixity class, to go with Pretty class.  Get precedence to
+    mostly work.
+  * Add Davis-Putnam and some Herbrand support.
+  * askolemize should not specialize, only skolemize removes quantifiers.
+  * Fix bad implementation of atomic method in PropositionalFormula for
+    Data.Logic.Types.FirstOrder type.
+  * Added an argument function to skolemize and skolemNormalForm to convert
+    the atom type of the original formula to that of the result.  This means
+    it can convert to any PropositionalFormula type while skolemizing.
+
+ -- David Fox <dsf@seereason.com>  Tue, 17 Jan 2012 21:00:28 -0800
+
+haskell-logic-classes (1.3) unstable; urgency=low
+
+  * Clean up the superclasses
+
+ -- David Fox <dsf@seereason.com>  Fri, 13 Jan 2012 08:45:55 -0800
+
+haskell-logic-classes (1.2) unstable; urgency=low
+
+  * Add a Pretty class to pretty print formulas and friends.
+
+ -- David Fox <dsf@seereason.com>  Tue, 10 Jan 2012 06:28:40 -0800
+
+haskell-logic-classes (1.1) unstable; urgency=low
+
+  * Use the Formula class to abstract out the two different types of Atom
+    functionality (with and without equality.)
+
+ -- David Fox <dsf@seereason.com>  Mon, 09 Jan 2012 10:45:09 -0800
+
+haskell-logic-classes (1.0.2) unstable; urgency=low
+
+  * Two important fixes in the old version of simpcnf.
+
+ -- David Fox <dsf@seereason.com>  Fri, 06 Jan 2012 05:37:12 -0800
+
+haskell-logic-classes (1.0.1) unstable; urgency=low
+
+  * Fixes for ghc 7.4.
+
+ -- David Fox <dsf@seereason.com>  Tue, 03 Jan 2012 12:43:44 -0800
+
+haskell-logic-classes (1.0.0) unstable; urgency=low
+
+  * Rewrite.
+
+ -- David Fox <dsf@seereason.com>  Wed, 21 Dec 2011 09:12:48 -0800
+
+haskell-logic-classes (0.49) unstable; urgency=low
+
+  * Fix a bug in the unification algorithm.  Unification should fail if
+    we try to unify a variable with itself.
+
+ -- David Fox <dsf@seereason.com>  Mon, 05 Dec 2011 17:02:49 -0800
+
+haskell-logic-classes (0.48) unstable; urgency=low
+
+  * Add missing test modules.
+
+ -- David Fox <dsf@seereason.com>  Sun, 04 Dec 2011 18:29:25 -0800
+
+haskell-logic-classes (0.47) unstable; urgency=low
+
+  * Move some orphan ProofResult instances here from ontology.y
+
+ -- David Fox <dsf@seereason.com>  Fri, 02 Dec 2011 11:41:33 -0800
+
+haskell-logic-classes (0.46) unstable; urgency=low
+
+  * Limit the recursion depth of the prover to 100.
+
+ -- David Fox <dsf@seereason.com>  Tue, 29 Nov 2011 15:05:39 -0800
+
+haskell-logic-classes (0.45) unstable; urgency=low
+
+  * Modify the superclasses of the Ord instance of Formula in
+    Data.Logic.Types.FirstOrderPublic.  It was causing a loop
+    when the PropLogic satisfiable function ran.
+
+ -- David Fox <dsf@seereason.com>  Fri, 14 Oct 2011 10:15:50 -0700
+
+haskell-logic-classes (0.44) unstable; urgency=low
+
+  * Major re-organization of modules.
+
+ -- David Fox <dsf@seereason.com>  Sun, 09 Oct 2011 17:31:36 -0700
+
+haskell-logic (0.43) unstable; urgency=low
+
+  * Move Propositional modules into Data.Logic.Propositional.
+  * Add a Native instance for PropositionalFormula.
+  * Add a Normal in the Propositional directory
+  * Add clauseNormalForm and disjunctiveNormalForm for Propositional
+  * Add clauseNormalFormAlt which is an alternate implementation of
+    clauseNormalForm, I'm not sure if it gives results that are actually
+    different or just look different, but it makes cabal-debian work.       
+
+ -- David Fox <dsf@seereason.com>  Thu, 29 Sep 2011 05:56:41 -0700
+
+haskell-logic (0.42) unstable; urgency=low
+
+  * Derive the show instance for ImplicativeNormalForm rather than
+    making a custom one.
+
+ -- David Fox <dsf@seereason.com>  Fri, 23 Sep 2011 16:43:09 -0700
+
+haskell-logic (0.41) unstable; urgency=low
+
+  * Add field accessors to Proof type.
+  * Finish show implementation for Proof
+
+ -- David Fox <dsf@seereason.com>  Mon, 08 Aug 2011 08:32:56 -0700
+
+haskell-logic (0.40) unstable; urgency=low
+
+  * Remove NoProof constructor from Proof type - we only need this in
+    the augumented Proof' type in the ontology package.
+  * Add prettyProof and prettyINF to Data.Logic.Pretty.
+
+ -- David Fox <dsf@seereason.com>  Sat, 06 Aug 2011 06:28:20 -0700
+
+haskell-logic (0.39) unstable; urgency=low
+
+  * Move Proof type from ontology to logic.
+
+ -- David Fox <dsf@seereason.com>  Thu, 04 Aug 2011 07:13:00 -0700
+
+haskell-logic (0.38) unstable; urgency=low
+
+  * Remove the triple of function parameters for converting formulas to
+    literals, these were all invariably id.
+
+ -- David Fox <dsf@seereason.com>  Tue, 02 Aug 2011 07:34:54 -0700
+
+haskell-logic (0.37) unstable; urgency=low
+
+  * Add an Ord instance to ProofResult so we can insert proofs into sets.
+
+ -- David Fox <dsf@seereason.com>  Mon, 01 Aug 2011 09:51:59 -0700
+
+haskell-logic (0.36) unstable; urgency=low
+
+  * Move module Test.Types to Data.Logic.Test and export so that clients
+    of this package can use the definitions to create test cases.
+
+ -- David Fox <dsf@seereason.com>  Sun, 24 Jul 2011 10:45:50 -0700
+
+haskell-logic (0.35) unstable; urgency=low
+
+  * Remove the Pretty class.  Pretty printing of a type is application
+    specific, so the type class doesn't make sense.  Instead add function
+    parameters to prettyForm et. al. to convert the primitive types to
+    Doc.
+
+ -- David Fox <dsf@seereason.com>  Fri, 22 Jul 2011 09:01:45 -0700
+
+haskell-logic (0.34) unstable; urgency=low
+
+  * Allow .=. literals in the Native instance.  This required a fix to the
+    resolution prover so that it never did substitutions based on an
+    equality predicate which had the same lhs and rhs.
+
+ -- David Fox <dsf@seereason.com>  Thu, 21 Jul 2011 22:30:14 -0700
+
+haskell-logic (0.33) unstable; urgency=low
+
+  * Move the modules into the Data heirarchy.
+
+ -- David Fox <dsf@seereason.com>  Sun, 17 Jul 2011 07:29:49 -0700
+
+haskell-logic (0.32) unstable; urgency=low
+
+  * Add a Pred class to describe predicate application
+  * Split pretty printing and show into a module.
+
+ -- David Fox <dsf@seereason.com>  Sat, 16 Jul 2011 15:24:43 -0700
+
+haskell-logic (0.31) unstable; urgency=low
+
+  * Create a second instance of FirstOrderFormula in the module
+    Logic.Instances.Public, with Eq and Ord instances that use
+    the normal form to detect formulas that are equivalent under
+    identity transforms.
+  * Export the Bijection class which converts between the public
+    and internal formula types.
+
+ -- David Fox <dsf@seereason.com>  Wed, 06 Jul 2011 12:46:45 -0700
+
+haskell-logic (0.30) unstable; urgency=low
+
+  * Simplify the parameters of the ImplicativeNormalForm type in the
+    native instance, move it to Logic.Normal and eliminate the
+    ImplicativeNormalFormula class.
+  * Don't require all formula and term types to be instances of Ord,
+    we can just specify it in the functions that need it.
+
+ -- David Fox <dsf@seereason.com>  Sat, 02 Jul 2011 09:20:57 -0700
+
+haskell-logic (0.29) unstable; urgency=low
+
+  * Ported to safe-copy
+
+ -- Jeremy Shaw <jeremy@seereason.com>  Fri, 17 Jun 2011 11:18:32 -0500
+
+haskell-logic (0.28) unstable; urgency=low
+
+  * Switch the order of some constructors so that defaultValue of
+    Formula gives us a simpler value.
+
+ -- David Fox <dsf@seereason.com>  Sun, 01 May 2011 11:36:12 -0700
+
+haskell-logic (0.27) unstable; urgency=low
+
+  * Moved JSON instances back to seereason.
+
+ -- David Fox <dsf@seereason.com>  Wed, 13 Apr 2011 20:53:42 -0700
+
+haskell-logic (0.26) unstable; urgency=low
+
+  * Add JSON instances.
+
+ -- David Fox <dsf@seereason.com>  Mon, 04 Apr 2011 07:21:25 -0600
+
+haskell-logic (0.25) unstable; urgency=low
+
+  * Disable the (unused) Logic-TPTP instance, it is blocking the
+    ghc7 build.
+
+ -- David Fox <dsf@seereason.com>  Sat, 30 Oct 2010 10:35:35 -0700
+
+haskell-logic (0.24) unstable; urgency=low
+
+  * Add a missing paren in the pretty printing and show instances.
+
+ -- David Fox <dsf@seereason.com>  Wed, 20 Oct 2010 21:17:34 -0700
+
+haskell-logic (0.23) unstable; urgency=low
+
+  * Add a "one" method to the Variable class which returns any instance of
+    the class, preferably some general purpose variable name like "x".
+
+ -- David Fox <dsf@seereason.com>  Wed, 06 Oct 2010 12:28:38 -0700
+
+haskell-logic (0.22) unstable; urgency=low
+
+  * Instead of making variables instances of Enum and having non-working
+    fromEnum and toEnum methods, create a class Var with only a "next"
+    method.
+  * Add an Arity class and make it a super class of the predicate types.
+  * Replace the pApp method with pApp0, pApp1, pApp2 ... pApp7, add a
+    pApp function that checks the predicate arity and dispatches to the
+    correct method, or throws an error.
+  * Add withUnivQuant to look at the list of universally quantified
+    variables wrapped around a formula.
+
+ -- David Fox <dsf@seereason.com>  Fri, 03 Sep 2010 12:36:25 -0700
+
+haskell-logic (0.21.2) unstable; urgency=low
+
+  * Fix a bug in fromFirstOrder
+  * Add Logic.Set.cartesianProduct, use to implement allpairs
+  * Add purednf and implement purecnf in terms of purednf.
+
+ -- David Fox <dsf@seereason.com>  Mon, 30 Aug 2010 15:44:10 -0700
+
+haskell-logic (0.21) unstable; urgency=low
+
+  * Rename the *Logic classes -> *Formula
+  * Split a NormalFormula class out of FirstOrderFormula, use it as
+    the result of the clauseNormalForm and implicativeNormalForm
+    functions.
+
+ -- David Fox <dsf@seereason.com>  Sun, 29 Aug 2010 14:27:34 -0700
+
+haskell-logic (0.20) unstable; urgency=low
+
+  * Reduce the number of arguments to foldF to three, one for quantifiers,
+    one for combining formulas, one for predicates.
+  * Add a Predicate type for a temporary representation of a predicate and
+    its arguments, this is the type now passed to foldF.
+
+ -- David Fox <dsf@seereason.com>  Mon, 23 Aug 2010 22:14:22 -0700
+
+haskell-logic (0.19) unstable; urgency=low
+
+  * Extensive work on polymorphic version of Resolution prover and test cases.
+  * Emergency check-in due to dying disk.
+  * Implement skolemization and cnf algorithms from Harrison book.
+
+ -- David Fox <dsf@seereason.com>  Tue, 17 Aug 2010 14:55:39 -0700
+
+haskell-logic (0.18) unstable; urgency=low
+
+  * Remove the Predicate and Proposition synonyms for Formula, they
+    seem likely to confuse.
+
+ -- David Fox <dsf@seereason.com>  Wed, 28 Jul 2010 09:30:41 -0700
+
+haskell-logic (0.17) unstable; urgency=low
+
+  * Make all the normal form code polymorphic.
+
+ -- David Fox <dsf@seereason.com>  Mon, 26 Jul 2010 08:05:24 -0700
+
+haskell-logic (0.16) unstable; urgency=low
+
+  * Move important super classes from the individual functions to the type
+    class FirstOrderLogic: Eq p, Boolean p, Eq f, Skolem f.
+  * Implement a default method for .!=.
+  * Remove two "quick simplifications" from Logic.NormalForm.distributeDisjuncts
+    because they assume Eq formula, which isn't really well defined.  Can these
+    make any difference anyway once we reach CNF?
+  * Rename convertPred -> convertFOF to match class name change.
+
+ -- David Fox <dsf@seereason.com>  Sat, 10 Jul 2010 22:25:18 -0700
+
+haskell-logic (0.15) unstable; urgency=low
+
+  * Rename PredicateLogic -> FirstOrderLogic
+  * Add a Logic.Prover module with a function to load a knowledgebase.
+
+ -- David Fox <dsf@seereason.com>  Thu, 08 Jul 2010 16:00:35 -0700
+
+haskell-logic (0.14) unstable; urgency=low
+
+  * Fix skolem handling.  Use a Skolem class to convert between Ints
+    and skolem functions, and a HasSkolem class to obtain numbers for
+    skolem functions from a monad.    
+  * Integrate Chiou Prover package into this one.  We need to mix
+    pieces of the two.
+
+ -- David Fox <dsf@seereason.com>  Thu, 08 Jul 2010 12:47:23 -0700
+
+haskell-logic (0.13) unstable; urgency=low
+
+  * Implement polymorphic version of implicativeNormalForm.
+
+ -- David Fox <dsf@seereason.com>  Tue, 06 Jul 2010 22:39:55 -0700
+
+haskell-logic (0.12) unstable; urgency=low
+
+  * Parameterize the variable type v in the PredicateLogic class and
+    the Formula type in the Parameterized instance.
+  * Reduce the number of functional dependencies in the PredicateLogic
+    class, this allows us to create two instances that use the same
+    types for any of v, p, or f.
+
+ -- David Fox <dsf@seereason.com>  Tue, 06 Jul 2010 17:52:37 -0700
+
+haskell-logic (0.11) unstable; urgency=low
+
+  * Modify the Skolem class so it uses a monad to generate new names
+    for skolem functions.  This corresponds to the technique used
+    by what is now our only working example of a first order logic
+    theorem prover, the new Chiou package.
+
+ -- David Fox <dsf@seereason.com>  Mon, 05 Jul 2010 12:46:08 -0700
+
+haskell-logic (0.10) unstable; urgency=low
+
+  * Add an instance for the Charles Chiou first order logic prover.
+
+ -- David Fox <dsf@seereason.com>  Mon, 05 Jul 2010 09:03:04 -0700
+
+haskell-logic (0.9) unstable; urgency=low
+
+  * Add a Logic.Satisfiable module, containing functions theorem, 
+    inconsistant, and invalid.
+
+ -- David Fox <dsf@seereason.com>  Fri, 02 Jul 2010 11:34:38 -0700
+
+haskell-logic (0.8) unstable; urgency=low
+
+  * Modify skolemize so it leaves the universal quantifiers on its
+    result, and add a function removeUniversal to remove them.  We
+    envision having a use for those quantifiers some time soon.
+  * Use standard names for the various normal forms, move Logic.CNF
+    to Logic.NormalForm.
+
+ -- David Fox <dsf@seereason.com>  Wed, 30 Jun 2010 18:28:00 -0700
+
+haskell-logic (0.7) unstable; urgency=low
+
+  * Change the order of substitution function arguments from (new, old)
+    to (old, new), to match the notation generally used in textbooks.
+
+ -- David Fox <dsf@seereason.com>  Wed, 30 Jun 2010 08:58:54 -0700
+
+haskell-logic (0.6.1) unstable; urgency=low
+
+  * Fix a bug in substituteTerm and re-implement skolemize.
+
+ -- David Fox <dsf@seereason.com>  Wed, 30 Jun 2010 06:43:50 -0700
+
+haskell-logic (0.6) unstable; urgency=low
+
+  * Split a Logic class out of PropositionalLogic and make it the ancestor
+    of PropositionalLogic and PredicateLogic.  This way we can eliminate
+    the horrible atom parameter from the PredicateLogic type.
+  * Add a Skolem v f class to encapsulate conversion of variables to
+    skolem functions.
+
+ -- David Fox <dsf@seereason.com>  Mon, 28 Jun 2010 06:34:43 -0700
+
+haskell-logic (0.5.1) unstable; urgency=low
+
+  * Rename variables in the moveQuantifiersOut operation of cnf to
+    avoid collisions later.
+  * Add an Enum instance for the V type so we can find fresh variables,
+    and new functions for finding the quantified variables and all the
+    variables in a formula.
+
+ -- David Fox <dsf@seereason.com>  Sun, 27 Jun 2010 07:00:49 -0700
+
+haskell-logic (0.5) unstable; urgency=low
+
+  * Export distributeDisjuncts
+
+ -- David Fox <dsf@seereason.com>  Fri, 25 Jun 2010 14:13:44 -0700
+
+haskell-logic (0.4) unstable; urgency=low
+
+  * Add documentation
+  * Remove the normalize function
+  * Remove the AtomicWord type (use the equivalent in Logic-TPTP.)
+  * Make some derived methods into functions.
+
+ -- David Fox <dsf@seereason.com>  Fri, 25 Jun 2010 09:32:22 -0700
+
+haskell-logic (0.3) unstable; urgency=low
+
+  * Eliminate the use of the unicode characters for for_all and
+    exists, they make the amd64 version of haddock crash.
+
+ -- David Fox <dsf@seereason.com>  Thu, 24 Jun 2010 13:46:42 -0700
+
+haskell-logic (0.2) unstable; urgency=low
+
+  * Add an Ord instance to AtomicFormula to satisfy the requirements
+    of the satisfiable function in PropLogic.
+
+ -- David Fox <dsf@seereason.com>  Thu, 24 Jun 2010 10:08:42 -0700
+
+haskell-logic (0.1) unstable; urgency=low
+
+  * Debianization generated by cabal-debian
+
+ -- David Fox <dsf@seereason.com>  Wed, 23 Jun 2010 14:19:18 -0700
+
